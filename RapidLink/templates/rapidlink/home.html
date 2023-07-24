@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block title %}URLGarden{% endblock title %}
+
+{% block content %}
+<div class="bg-light bg-gradient main">
+    <!-- Simple clickable logo -->
+    {% include "logo_link.html" %}
+
+    <!-- Link Shorten here -->
+    <div class="mt-4 d-flex justify-content-center">
+        <div class="bg-white url-container">
+            <h1 class="fw-bolder text-center">Paste the URL to be shortened</h1>
+            <form action="{% url 'home' %}" method="post">
+                {% csrf_token %}
+                {% comment %} {{ form.entered_url.name }} {% endcomment %}
+                <div class="container my-4">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="mb-3">
+                                <input type="text" name="url" class="form-control input_link border border-primary mx-2 py-4  px-3" placeholder="Enter the link here" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="d-grid">
+                                <button type="submit" class="green-color btn btn-success btn-lg mt-2" style="width: 10rem;">Shorten URL</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <small class="ms-5 mb-2 fs-6 text-center d-inline-block text-wrap text-break" style="max-width: 85%;">Shorten URLs and create compact links effortlessly with URLGarden. Share your links easily across platforms with our user-friendly URL shortener service.</small>
+
+        </div>
+    </div>
+    <hr>
+<!-- Website Description Start -->
+
+<div class="container text-center mt-5" style="max-width: 800px;">
+    <div>
+        <h1 class="my-3 fw-bold">Simple and fast URL shortener!</h1>
+        <p class="text-justify align_justify fs-5 text-light-emphasis">
+            URLGarden enables you to effortlessly shorten lengthy links from popular platforms such as <a href="https://www.instagram.com/" target="_blank">Instagram</a>, <a href="https://www.facebook.com/" target="_blank">Facebook</a>, <a href="https://www.youtube.com/" target="_blank">YouTube</a>, <a href="https://twitter.com/" target="_blank">Twitter</a>, <a href="https://linkedin.com/" target="_blank">LinkedIn</a>, <a href="https://web.whatsapp.com/" target="_blank">WhatsApp</a>, <a href="https://www.tiktok.com/" target="_blank">TikTok</a>, blogs, and various websites. Simply paste the long URL into the designated field and click the "Shorten URL" button. On the subsequent page, copy the generated shortened URL and seamlessly share it across different sites, chat platforms, and emails. Track the performance of your shortened URLs by monitoring the number of clicks they receive. Experience the convenience and efficiency of URLGarden in managing your links.</p>
+    </div>
+    <div class="mt-5">
+        <h1 class="my-3 fw-bold">Shorten, share and track</h1>
+        <p class="text-justify align_justify fs-5 text-light-emphasis">Your shortened URLs can be used in publications, documents, advertisements, blogs, forums, instant messages, and other locations. Track statistics for your business and projects by monitoring the number of hits from your URL with our click counter.</p>
+        
+    </div>
+</div>
+
+<!-- Website Description End -->
+
+<!-- Website Description Grid Start -->
+
+<div class="container text-center mt-5 p-4 font-awesome-section">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 gy-5">
+        <div class="col">
+            <i class="fa-regular fa-thumbs-up fa-flip-horizontal fa-4x green-color"></i>
+            <h1 class="fw-bolder my-2 p-2">Easy</h1>
+            <p class="ms-5" style="max-width: 25rem;">Easy and fast process to get your shortened link</p>
+        </div>
+
+        <div class="col">
+            <i class="fa-solid fa-link fa-4x green-color"></i>
+            <h1 class="fw-bolder my-2 p-2">Shortened</h1>
+            <p class="ms-5" style="max-width: 25rem;">Shorten any link, regardless of its size</p>
+        </div>
+
+        <div class="col">
+            <i class="fa-solid fa-clipboard-check fa-4x green-color"></i>
+            <h1 class="fw-bolder my-2 p-2">Secure</h1>
+            <p class="ms-5" style="max-width: 25rem;">Fast and secure service with HTTPS protocol and data encryption</p>
+        </div>
+
+        <div class="col">
+            <i class="fa-solid fa-signal fa-4x green-color"></i>
+            <h1 class="fw-bolder my-2 p-2">Statistics</h1>
+            <p class="ms-5" style="max-width: 25rem;">Track the number of clicks on your shortened URL</p>
+        </div>
+
+        <div class="col">
+            <i class="fa-regular fa-hand fa-4x green-color"></i>
+            <h1 class="fw-bolder my-2 p-2">Reliable</h1>
+            <p class="ms-5" style="max-width: 25rem;">Ensuring the removal of spam, viruses, and malware from all links</p>
+        </div>
+
+        <div class="col">
+            <i class="fa-solid fa-laptop-code fa-4x green-color"></i>
+            <h1 class="fw-bolder my-2 p-2">Devices</h1>
+            <p class="ms-5" style="max-width: 25rem;">Compatible with smartphones, tablets, and desktop devices</p>
+        </div>
+    </div>
+</div>
+
+<!-- Website Description Grid Start -->
+
+
+<!-- Footer Start -->
+
+{% include 'footer.html' %}
+  
+
+<!-- Footer End -->
+
+
+
+
+</div>
+{% endblock content %}

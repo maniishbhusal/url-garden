@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}URL Error{% endblock title %}
+
+{% block content %}
+
+<div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">An error occurred creating the Shortened URL</h4>
+    <p>The URL has not been shortened, possible errors:</p>
+    <ul>
+        <li>Check if the domain is correct</li>
+        <li>Check if the site is online</li>
+        <li>Check the length of the url is too small</li>
+        <li>Check the address bars and punctuation</li>
+        <li>The URL may be being used for spam</li>
+        <li>The URL may have been blocked</li>
+        <li>The URL may have been reported</li>
+        <li>The URL was recently shortened</li>
+        <li>The URL is not allowed</li>
+    </ul>
+    <hr>
+    <a href="{% url 'home' %}" class="mb-0">Go back and try again</a>
+</div>
+
+{% endblock content %}

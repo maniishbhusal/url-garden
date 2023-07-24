@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Shortened URL{% endblock title %}
+
+{% block content %}
+{% include 'logo_link.html' %}
+
+<!-- Shortened URL Final Output Start -->
+
+<div class="container text-start my-5 me-5 py-1">
+    <h1 class="fw-bold">Your Shortened URL</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-6">
+                <p class="my-3 fs-5">Unleash the power of your compact link! Share it effortlessly across messages, texts, posts, websites, and more. Amplify your reach with ease.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container ms-2" style="max-width: 55%;">
+        <form>
+            <div class="container p-3 mt-5">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="mb-3">
+                            <input type="text" id="short-url" class="form-control input_link border border-primary mx-2 p-3" style="max-width: 100%;" value="{{ short_url }}">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-3 mt-lg-0">
+                        <div class="d-grid">
+                            <button type="button" class="green-color btn btn-success btn-lg fs-4 fw-bold" style="width: 100%;" onclick="copyToClipboard()">Copy URL</button>
+                        </div>
+                    </div>
+
+                    <!-- Add the alert message to the template -->
+                    <!-- <div id="copy-alert" class="alert alert-success alert-dismissible fade" role="alert">
+                        <strong>Success!</strong> The URL has been copied to the clipboard.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div> -->
+
+                </div>
+            </div>
+
+            
+            <div class="container ms-3 d-flex flex-column">
+                <p class="fw-light fs-4">Long URL: <a class="fst-italic" href="{{ entered_url }}" target="_blank">{{ entered_url }}</a></p>
+                <button type="submit" class="green-color btn btn-success btn-lg my-1 fs-5 fw-bold" style="width:23rem">Total Clicks of Your Shortened URL</button>
+                <button type="submit" class="green-color btn btn-success btn-lg mt-1 fs-5 fw-bold" style="width:15rem">Shorten Another URL</button>
+            </div>    
+            
+        </form>
+
+        <div class="container mt-5">
+            <h1>Share URL</h1>
+            <button class="btn" type="submit"><i class="fa-brands fa-facebook-f fa-2x" style="color: #38588f;"></i></button>
+            <button class="btn" type="submit"><i class="fa-brands fa-twitter fa-beat fa-2x" style="color: #337eff;"></i></button>
+            <button class="btn" type="submit"><i class="fa-brands fa-reddit-alien fa-2x" style="color: #ff6f0f;"></i></button>
+        </div>
+    </div>
+</div>
+
+<!-- Shortened URL Final Output End -->
+
+<!-- Javascript Start -->
+
+<script>
+    function copyToClipboard() {
+        var input = document.getElementById("short-url");
+        input.select();
+        navigator.clipboard.writeText(input.value);
+
+        // Show the alert message
+        // var alert = document.getElementById("copy-alert");
+        // alert.classList.add("show");
+    }
+</script>
+
+
+
+<!--Javascript End-->
+
+
+{% include 'footer.html' %}
+
+{% endblock content %}

@@ -1,0 +1,49 @@
+.main {
+    min-height: 100vh;
+}
+
+hr {
+    height: 0;
+    border-top: 5px dotted rgb(41, 165, 41);
+    margin: 1rem auto;
+    max-width: 4rem;
+}
+
+@media (max-width: 576px) {
+    hr {
+        max-width: 6rem;
+    }
+}
+
+
+.url-container {
+    width: 80%;
+    max-width: 52rem;
+    /* border: 1px solid rgba(141, 141, 141, 0.5); */
+    margin: 0 auto; /* Added to horizontally center the container */
+}
+
+.align_justify{
+    margin: 0;
+    text-indent: 0;
+    text-align: justify;
+}
+
+.font-awesome-section h1{
+color: rgba(10, 10, 10, 0.733);
+}
+
+.green-color,a{
+    text-decoration: none;
+    color: rgb(41, 165, 41);
+}
+
+button.green-color{
+    background-color: rgb(41, 165, 41);
+    color: white;
+}
+
+div h1, h1{
+    color: rgba(32, 30, 30, 0.774);
+}
+
