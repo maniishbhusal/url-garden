@@ -1,8 +1,8 @@
 import random
 import string
+from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, redirect
 from django.views import View
-import pyshorteners
 from django.urls import reverse
 from .models import URLModel
 from django.core.validators import URLValidator
@@ -46,8 +46,8 @@ class HomeView(View):
         return redirect(reverse('shortener'))
 
     def generate_short_url(self):
-        letters = string.ascii_lowercase
-        return ''.join(random.choice(letters) for i in range(8))
+        characters = string.ascii_letters + string.digits
+        return ''.join(random.choice(characters) for i in range(5))
 
 
 class ShortenerView(View):
@@ -73,3 +73,14 @@ class ShortenerView(View):
 class URLErrorView(TemplateView):
     template_name = 'url_error.html'
 
+class RedirectView(View):
+    def get(self, request, short_url):
+        try:
+            url_model = URLModel.objects.filter(short_url=short_url).first()
+            if url_model is None:
+                return HttpResponseNotFound('URL not found')
+            else:
+                entered_url = url_model.entered_url
+                return redirect(entered_url)
+        except Exception as e:
+            return HttpResponse('An error occurred', status=500)
