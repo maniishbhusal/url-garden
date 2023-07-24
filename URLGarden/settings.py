@@ -1,6 +1,9 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
+from django.contrib.messages import constants as messages
+
+
 
 load_dotenv()
 
@@ -117,3 +120,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # STATICFILES_DIRS = [
 #     BASE_DIR / 'static'
 # ]
+
+# Messages setting
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}

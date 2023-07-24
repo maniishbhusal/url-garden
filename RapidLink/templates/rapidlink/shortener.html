@@ -3,6 +3,7 @@
 {% block title %}Shortened URL{% endblock title %}
 
 {% block content %}
+{% include 'messages.html' %}
 {% include 'logo_link.html' %}
 
 <!-- Shortened URL Final Output Start -->
@@ -23,7 +24,7 @@
                 <div class="row">
                     <div class="col-lg-8">
                         <div class="mb-3">
-                            <input type="text" id="short-url" class="form-control input_link border border-primary mx-2 p-3" style="max-width: 100%;" value="{{ short_url }}">
+                            <input type="text" id="short-url" class="form-control input_link border border-primary mx-2 p-3" style="max-width: 100%;" value="http://127.0.0.1:8000/{{ short_url }}">
                         </div>
                     </div>
                     <div class="col-lg-4 mt-3 mt-lg-0">
