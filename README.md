@@ -2,6 +2,9 @@
 
 URL Garden is a simple Django web application that allows users to shorten long URLs. It provides a user-friendly interface to submit a URL and receive a unique short URL in return. When users paste the short URL into their browser, they are seamlessly redirected to the original long URL.
 
+![Home Page of URLGarden](https://github.com/manish-bhusal/url-garden/assets/84217955/2880ba68-c7f1-4d51-bac1-4ed3483e8ab2)
+
+
 ## Usage
 
 1. Visit the homepage of URL Garden.
